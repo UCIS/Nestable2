@@ -19,7 +19,8 @@
         el.style.pointerEvents = 'auto';
         el.style.pointerEvents = 'x';
         docEl.appendChild(el);
-        var supports = window.getComputedStyle && window.getComputedStyle(el, '').pointerEvents === 'auto';
+        var style = window.getComputedStyle && window.getComputedStyle(el, '');
+        var supports = style && style.pointerEvents === 'auto';
         docEl.removeChild(el);
         return !!supports;
     })();
